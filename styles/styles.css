@@ -43,11 +43,13 @@ body {
     }
 
 @keyframes ball_movement {
-    0% {
+    /* Si no quiero que el movimiento de la pelota afecte a otros elementos, usar transform: translate() para ir cambiando la posición de la pelota.*/
+    0% {               
         top: 25px;
         left: 0px;
     }
     15% {
+              
         top: 495px;
         left: 200px;
     }
