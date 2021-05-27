@@ -34,47 +34,15 @@ body {
         width: 100px;
         margin: 0px;
         padding: 0px;
-        animation-name: ball_movement;
-        animation-duration: 5s;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-        top: 25px;
+        animation: vertical-movement 0.7s linear 0s infinite alternate, horizontal-movement 2.03s linear 0s infinite alternate;    
+        top: 0px; /* 25px si quiero un límite superior que no sea el borde, para simular gravedad. */
         left: 0px;        
     }
+/* Si no quiero que el movimiento de la pelota afecte a otros elementos, usar transform: translate() para ir cambiando la posición de la pelota.*/
+@keyframes vertical-movement {
+    to{top: 495px;}    
+}
 
-@keyframes ball_movement {
-    /* Si no quiero que el movimiento de la pelota afecte a otros elementos, usar transform: translate() para ir cambiando la posición de la pelota.*/
-    0% {               
-        top: 25px;
-        left: 0px;
-    }
-    15% {
-              
-        top: 495px;
-        left: 200px;
-    }
-    30% {
-        top: 25px;
-        left: 350px;
-    }
-    45% {
-        top: 375px;
-        left: 495px;
-    }
-    50% {
-        top: 495px;
-        left: 425px;
-    }
-    70% {
-        top: 25px;
-        left: 350px;
-    }
-    85% {
-        top: 495px;
-        left: 200px;
-    }
-    100% {
-        top: 25px;
-        left: 0px;
-    }       
+@keyframes horizontal-movement {
+    to{left: 495px;}
 }
